@@ -1,0 +1,18 @@
+body {
+
+    background-image: linear-gradient(rgba(42, 41, 41, 0.842), rgba(32, 32, 32, 0.832)), url(https://res.cloudinary.com/cloud0310/image/upload/v1662149420/Tee-Rex/bgts_pzmglc.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;    
+      
+}
+
+h1 {
+    font-family: Georgia, sans-serif;
+    text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
+    font-size: 3em;
+    letter-spacing: -2px;
+    color : white;
+  }
+

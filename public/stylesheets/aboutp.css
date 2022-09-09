@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(139, 186, 217, 0.459), rgba(130, 168, 201, 0.623)),
+    url("https://res.cloudinary.com/cloud0310/image/upload/v1662656364/Tee-Rex/abtp_qn5lnl.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
+    /* box-shadow: inset 0 0 0 5rem rgba(0, 0, 0, 0.5); */
+}
+
+
+
+.list-group-item {
+    background-color: transparent;
+    border-top: 1px solid #ddd;
+    border-radius: 0;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    }
+
+.aim {
+        
+    background-color: rgba(225, 72, 87, 0.781);
+    box-shadow : 0 0 0.1rem 0.1rem   rgba(0, 0, 0, 0.255);
+    border-radius:1%;
+    color: rgb(255, 255, 255);
+}
+
+.aim-title {
+    font-weight: 650;
+}

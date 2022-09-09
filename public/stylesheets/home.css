@@ -1,0 +1,39 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    url("https://res.cloudinary.com/cloud0310/image/upload/v1661930046/Tee-Rex/dadw_znanrv.jpg");
+    /* url("https://res.cloudinary.com/cloud0310/image/upload/v1661930046/Tee-Rex/dadw_znanrv.jpg"); */
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
+    /* box-shadow: inset 0 0 0 5rem rgba(0, 0, 0, 0.5); */
+
+}
+
+.cover-container{
+    max-width: 65vw;
+}
+
+.nav-link{
+    padding: 0.25rem 0;
+    font-weight: 700;
+    color: rgba(225, 225, 225, 0.5);
+    margin-left: 1rem;
+    border-bottom: 0.25rem solid transparent;
+
+}
+
+.nav-link:hover{
+    color:rgba(53, 87, 209, 0.975);
+    border-bottom-color: rgba(53, 87, 209, 0.6);
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color: rgba(225, 225, 225, 0.5) ;
+}
+
+.btn-secondary, .btn-secondary:hover {
+    color: #333;
+    text-shadow : none;
+}

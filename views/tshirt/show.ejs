@@ -1,0 +1,119 @@
+<% layout('layouts/boilerplate') %> 
+
+<div class="card mb-3" >
+  <div class="row">
+    <div class="col-md-4">
+            <div>
+
+              <div id="tshirtcarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <% tshirt.images.forEach((img, i) => { %>
+                    <div class="carousel-item <%= i===0 ? 'active': '' %>">
+                    <img src="<%= img.url %>" class="card-img-top" alt="not find">
+                    </div>
+                <% }) %>
+                </div>
+
+                </div>
+                <% if(tshirt.images.length > 1) { %> 
+                <button class="carousel-control-prev" type="button" data-bs-target="#tshirtcarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#tshirtcarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                <% } %> 
+            </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title"><%= tshirt.title %></h3>
+      </div>
+      <div class="d-flex">
+        <h4 class="text-danger mx-2"> - <%= tshirt.discount %>% </h4>
+        <h4 class="mx-2"> <b> &#8377;<%= tshirt.sprice %> </b> </h4>
+        <h6 class="text-muted my-1"> <s>&#8377;<%= tshirt.price %> </s></h6>
+      </div>
+      <hr>
+      <h4 class="mx-3 fw-semibold">Product Details</h4>
+      <div class="mx-3">
+        <div>
+          <h5 class="fw-semibold">Colour</h5>
+          <h6 class="fst-italic text-muted"><%= tshirt.colour %> </h6>
+        </div>
+        <div>
+          <h5 class="fw-semibold">Material Composition</h5>
+          <h6 class="fst-italic text-muted"><%= tshirt.material %> </h6>
+        </div>
+        <div>
+          <h5 class="fw-semibold">Style</h5>
+          <h6 class="fst-italic text-muted">T-Shirt</h6>
+        </div>
+        <div>
+          <h5 class="fw-semibold">Pattern</h5>
+          <h6 class="fst-italic text-muted">Solid</h6>
+        </div>
+        <div>
+          <h5 class="fw-semibold">Neck Style</h5>
+          <h6 class="fst-italic text-muted">Round</h6>
+        </div>
+        <div>
+          <h5 class="fw-semibold">Country of Origin</h5>
+          <h6 class="fst-italic text-muted">India</h6>
+        </div>
+      </div>
+      <div class="mx-2">
+        <h5 class="fw-semibold">Description</h5>
+        <h6 class="fw-lighter" >
+        <%= tshirt.description %>   
+        </div>
+<br>
+        <div class="mx-2">
+          <form action="/tshirts/<%= tshirt._id %>/api/payment/order" method="post">
+           <div>
+            <label for="size">Size</label>
+            <select name="size" id="size">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+            </select>
+            <label for="quantity">Quantity</label>
+            <select name="quantity" id="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+           </div><br>
+            <div class="d-grid gap-2 col-4 my-2">
+              <button class="btn btn-warning "> Buy Now</button>
+              <br>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <% if( currentUser && tshirt.author.equals(currentUser._id)) { %> 
+      <footer class="d-flex my-2">
+        <a href="/tshirts/<%= tshirt._id %>/edit" class="btn btn-primary btn-sm">Edit</a>
+            <form action="/tshirts/<%= tshirt._id %>?_method=delete " method="post">
+                <button class="btn btn-danger btn-sm mx-4">delete</button>
+            </form>     
+    </footer>
+      <% } %> 

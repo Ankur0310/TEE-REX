@@ -1,0 +1,68 @@
+<% layout('layouts/boilerplate') %> 
+    
+    <div class="row">
+        <h1 class="text-center">Edit <%= tshirt.title %> </h1>
+        <div class="col-md-6 offset-md-3">
+    
+            <form action="/tshirts" method="post" enctype="multipart/form-data" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" name="tshirt[title]" id="title" value="<%= tshirt.title %> "  required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="discount">Discount</label>
+                    <div class="input-group">
+                        <input class="form-control" type="number" name="tshirt[discount]" id="discount" placeholder="0.00" min="0" value="<%= tshirt.discount %>" required>
+                    <span class="input-group-text" id="discount-label">%</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="sprice">Selling Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="discount-label"> &#8377; </span>
+                    <input class="form-control" type="number" name="tshirt[sprice]" id="sprice" placeholder="0.00" min="0" value="<%= tshirt.sprice %>" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="discount-label"> &#8377; </span>
+                    <input class="form-control" type="number" name="tshirt[price]" id="price" placeholder="0.00" min="0" value="<%= tshirt.price %>" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="colour">Colour</label>
+                    <input class="form-control" type="text" name="tshirt[colour]" id="colour" value="<%= tshirt.colour %>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="material">Material</label>
+                    <input class="form-control" type="text" name="tshirt[material]" id="material" value="<%= tshirt.material %>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image(s)</label>
+                    <input class="form-control" type="file" name="image" id="image" multiple  required>
+                </div>
+                <div>
+                    <label class="form-label" for="description">Description</label><br>
+                    <textarea class="form-control" name="tshirt[description]" id="description" cols="30" rows="10" required><%= tshirt.description %></textarea>
+                </div><br>
+
+                <div class="mb-3">
+                    
+                    <label class="form-label" for="status">Status</label>
+                    <select class="form-control" name="tshirt[status]" id="status">
+                      <option value="0">Out of Stock</option>
+                      <option value="1">Available</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn btn-info my-3">Update Tshirt Design</button>
+                </div>
+            </form>
+            <footer class="mb-4">
+                <a href="/tshirts/<%= tshirt._id %>" class="btn btn-primary mt-auto">View</a> 
+            </footer>
+    
+        </div>
+    </div>
+     

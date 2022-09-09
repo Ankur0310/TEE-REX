@@ -1,0 +1,35 @@
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">
+                <img src="https://res.cloudinary.com/cloud0310/image/upload/v1662149748/Tee-Rex/teelogo_iip5wa.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                TEE-REX  
+            </span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+                <a class="nav-link " href="/tshirts">Tshirts</a>
+                <% const admin_id = '6311e271123af3168cdad385' %> 
+                <% if( currentUser && (currentUser._id == admin_id)) { %> 
+                <a class="nav-link" href="/tshirts/new">New Design</a>
+                <a class="nav-link" href="/tshirts/admin/orders">All Orders</a>
+                <% } %>
+                <% if(currentUser){ %> 
+                <a class="nav-link " href="/tshirts/orderp">Orders</a> 
+                <% } %> 
+                <a class="nav-link " href="/tshirts/about">About Us</a>
+              </div>
+              <div class="navbar-nav">
+                <% if(!currentUser) { %> 
+                <a class="nav-link " href="/login">Login</a>
+                <a class="nav-link " href="/register">Register</a>
+                <% }else { %> 
+                <a class="nav-link " href="/logout">Logout</a>
+                <% } %> 
+              </div>
+            
+          </div>
+        </div>
+      </nav>
