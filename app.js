@@ -28,6 +28,7 @@ const dbUrl = process.env.DB_URL;
 const tshirtRoutes = require('./routes/tshirts');
 const userRoutes = require('./routes/users');
 
+const DB = 'mongodb+srv://admin:admin@cluster0.miasmqv.mongodb.net/tee_rex?retryWrites=true&w=majority';
 
 
 
@@ -42,6 +43,15 @@ db.on("error", console.error.bind(console, "connection error"));
 db.once("open", () => {
     console.log("Database connected");
 })
+
+// mongoose.connect(DB,{
+//     useNewUrlParser : true,
+//     useUnifiedTopology : true,
+//     // useCreateIndex:true,
+//     // useFindAndModify:false
+// }).then(()=> {
+//     console.log(`connnection successful`);
+// }).catch((err)=> console.log(err));
 
 const app = express();
 
